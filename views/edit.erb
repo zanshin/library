@@ -2,7 +2,7 @@
     <form action="/<%= @book.id %>" method="post" id="edit">
         <input type="hidden" name="_method" value="put">
         <div class="control-group">
-            <label class="control-label" for="type">Book type</label>
+            <label class="control-label" for="type">Format</label>
             <div class="controls">
                 <select name="type" value=<%= @book.type %>
                     <optgroup label="Book type">
@@ -47,7 +47,8 @@
         <div class="control-group">
             <div class="controls">
                 <button class="btn btn-warning" type="submit">Update book</button>
-                <a class="btn btn-danger" href ="/<%= @book.id %>/delete">Delete book</a>
+                <a class="btn btn-danger" href="/<%= @book.id %>/delete">Delete book</a>
+                <a class="btn btn-info" href="/">Cancel</a>
             </div>
         </div>
     </form>

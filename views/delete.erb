@@ -2,8 +2,8 @@
     <p>Are you sure you want to delete the following book: <em>"<%= @book.composition %>"</em>?</p>
     <form action="/<%= @book.id %>" method="post">
         <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Yes, Delete it!">
-        <a href="<%= @book.id %>">Cancel</a>
+        <input class="btn btn-danger" type="submit" value="Yes, delete it">
+        <a class="btn btn-info" href="/<%= @book.id %>">Cancel</a>
     </form>
 <% else %>
     <p>book not found</p>
