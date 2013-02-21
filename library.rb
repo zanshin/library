@@ -26,14 +26,14 @@ DataMapper.finalize.auto_upgrade!
 get '/' do 
     @books = Book.all :order => :id.desc
     puts "found #{@books.count} books"
-    @title = 'All Books'
+    @subhead = 'All Books'
     erb :home
 end
 
 # show add pag
 get '/add' do
     puts "adding new book"
-    @title = "Add book"
+    @subhead = "Add book"
     erb :add
 end
 
@@ -61,7 +61,7 @@ end
 # edit action
 get '/:id' do 
     @book = Book.get params[:id]
-    @title = "Edit book"
+    @subhead = "Edit book"
     erb :edit
 end
 
@@ -78,7 +78,7 @@ end
 # delete action
 get '/:id/delete' do 
     @book = Book.get params[:id]
-    @title = "Confirm deletion of book ##{params[:id]}"
+    @subhead = "Confirm deletion of book ##{params[:id]}"
     erb :delete
 end
 
