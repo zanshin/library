@@ -30,6 +30,13 @@ get '/' do
     erb :home
 end
 
+# show add pag
+get '/add' do
+    puts "adding new book"
+    @title = "Add book"
+    erb :add
+end
+
 #post action (add)
 post '/' do 
     b = Book.new
