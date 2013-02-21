@@ -66,14 +66,18 @@ get '/:id' do
 end
 
 # # put (update) action
-# put '/:id' do 
-#     n = Note.get params[:id]
-#     n.content = params[:content]
-#     n.compelte = params[:complete] ? 1: 0
-#     n.updated_at = Time.now
-#     n.save
-#     redirect '/'
-# end
+put '/:id' do 
+    b = Book.get params[:id]
+    b.type = params[:type]
+    b.composer = params[:composer]
+    b.composition = params[:composition]
+    b.edition = params[:edition]
+    b.editor = params[:editor]
+    b.purchase_price = params[:price]
+    b.updated_at = Time.now.to_date.to_s
+    b.save
+    redirect '/'
+end
 
 # delete action
 get '/:id/delete' do 
