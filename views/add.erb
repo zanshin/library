@@ -1,0 +1,54 @@
+<section id="add">
+    <form class="form-horizontal" action="/" method="post">
+        <div class="control-group">
+            <label class="control-label" for="type">Book type</label>
+            <div class="controls">
+                <select name="type" placeholder="Select a type">
+                    <optgroup label="Book type">
+                        <option value="textbook">Textbook</option>
+                        <option value="collection">Collection</option>
+                        <option value="sheet">Sheet music</option>
+                        <option value="method">Method book</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="composer">Composer</label>
+            <div class="controls">
+                <input class="input-xlarge" type="text" name="composer" placeholder="Composer">
+            </div>
+        </div>
+        <div class="control-group"> 
+            <label class="control-label" for="composer">Composition</label>
+            <div class="controls">
+                <input class="input-xxlarge" type="text" name="composition" placeholder="Composition">
+            </div>
+        </div>
+        <div class="control-group"> 
+            <label class="control-label" for="composer">Edition</label>
+            <div class="controls">
+                <input class="input-xlarge" type="text" name="edition" placeholder="Edition">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="editor">Editor</label>
+            <div class="controls">
+                <input class="input-xlarge" type="text" name="editor" placeholder="Editor">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="price">Purchase price</label>
+            <div class="controls">
+                <input class="input-small" type="text" name="price" placeholder="Price" pattern="^\d+\.\d{2}$">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button class="btn btn-primary" type="submit" class="btn">Add book</button>
+                <a class="btn btn-info" href="/">Cancel</a>
+            </div>
+        </div>
+
+    </form>
+</section>
