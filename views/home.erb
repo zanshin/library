@@ -21,7 +21,7 @@
         <td><%= book.editor %></td>
         <td><%= book.purchase_price.to_s('F') %></td>
         <td><small><%= book.created_at %></small></td>
-        <td><small><span><a href="/<%= book.id %>">[edit]</a> </span></td> 
+        <td><small><span><a class="btn btn-mini" href="/<%= book.id %>">edit</a> </span></td> 
     </tr>
 <% end %>
 </table>
