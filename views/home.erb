@@ -1,0 +1,81 @@
+<section id="add">
+    <form class="form-horizontal" action="/" method="post">
+        <div class="control-group">
+            <label class="control-label" for="type">Book type</label>
+            <div class="controls">
+                <select name="type" placeholder="Select a type">
+                    <optgroup label="Book type">
+                        <option value="textbook">Textbook</option>
+                        <option value="collection">Collection</option>
+                        <option value="sheet">Sheet music</option>
+                        <option value="method">Method book</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="composer">Composer</label>
+            <div class="controls">
+                <input class="input-xlarge" type="text" name="composer" placeholder="Composer">
+            </div>
+        </div>
+        <div class="control-group"> 
+            <label class="control-label" for="composer">Composition</label>
+            <div class="controls">
+                <input class="input-xxlarge" type="text" name="composition" placeholder="Composition">
+            </div>
+        </div>
+        <div class="control-group"> 
+            <label class="control-label" for="composer">Edition</label>
+            <div class="controls">
+                <input class="input-xlarge" type="text" name="edition" placeholder="Edition">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="editor">Editor</label>
+            <div class="controls">
+                <input class="input-xlarge" type="text" name="editor" placeholder="Editor">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="price">Purchase price</label>
+            <div class="controls">
+                <input class="input-small" type="text" name="price" placeholder="Price" pattern="^\d+\.\d{2}$">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button class="btn btn-primary" type="submit" class="btn">Add book</button>
+                <!-- <button type="button" class="btn">Cancel</button> -->
+            </div>
+        </div>
+
+    </form>
+</section>
+
+<table class="table table-hover" width="100%">
+    <tr>
+        <th>Type</th>
+        <th>Composer</th>
+        <th>Composition</th>
+        <th>Edition</th>
+        <th>Editor</th>
+        <th>Price</th>
+        <th>Date Added</th>
+        <th>&nbsp;</th>
+    </tr>
+
+<% @books.each do |book| %>
+
+    <tr>
+        <td><%= book.type %></td>
+        <td><%= book.composer %></td>
+        <td><%= book.composition %></td>
+        <td><%= book.edition %></td>
+        <td><%= book.editor %></td>
+        <td><%= book.purchase_price.to_s('F') %></td>
+        <td><small><%= book.created_at %></small></td>
+        <td><small><span><a href="/<%= book.id %>">[edit]</a> </span></td> 
+    </tr>
+<% end %>
+</table>

@@ -1,0 +1,56 @@
+<% if @book %>
+    <form action="/<%= @book.id %>" method="post" id="edit">
+        <input type="hidden" name="_method" value="put">
+        <div class="control-group">
+            <label class="control-label" for="type">Book type</label>
+            <div class="controls">
+                <select name="type" value=<%= @book.type %>
+                    <optgroup label="Book type">
+                        <option value="textbook">Textbook</option>
+                        <option value="collection">Collection</option>
+                        <option value="sheet">Sheet music</option>
+                        <option value="method">Method book</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="composer">Composer</label>
+            <div class="controls">
+                <input type="text" name="composer" value=<%= @book.composer %>
+            </div>
+        </div>
+        <div class="control-group"> 
+            <label class="control-label" for="composer">Composition</label>
+            <div class="controls">
+                <input type="text" name="composition" value=<%= @book.composition %>
+            </div>
+        </div>
+        <div class="control-group"> 
+            <label class="control-label" for="composer">Edition</label>
+            <div class="controls">
+                <input type="text" name="edition" value=<%= @book.edition %>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="editor">Editor</label>
+            <div class="controls">
+                <input type="text" name="editor" value=<%= @book.editor %>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="price">Purchase price</label>
+            <div class="controls">
+                <input type="text" name="price" value=<%= @book.purchase_price.to_s('F') %>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button class="btn btn-warning" type="submit">Update book</button>
+                <a class="btn btn-danger" href ="/<%= @book.id %>/delete">Delete book</a>
+            </div>
+        </div>
+    </form>
+<% else %>
+    <p>Book not found.</p>
+<% end %>
