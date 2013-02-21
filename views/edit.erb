@@ -4,7 +4,7 @@
         <div class="control-group">
             <label class="control-label" for="type">Format</label>
             <div class="controls">
-                <select name="type" value=<%= @book.type %>
+                <select name="type" value=<%= @book.type %>>
                     <optgroup label="Book type">
                         <option value="textbook">Textbook</option>
                         <option value="collection">Collection</option>
@@ -17,31 +17,31 @@
         <div class="control-group">
             <label class="control-label" for="composer">Composer</label>
             <div class="controls">
-                <input type="text" name="composer" value=<%= @book.composer %>
+                <input type="text" name="composer" value=<%= @book.composer %>>
             </div>
         </div>
         <div class="control-group"> 
             <label class="control-label" for="composer">Composition</label>
             <div class="controls">
-                <input type="text" name="composition" value=<%= @book.composition %>
+                <input type="text" name="composition" value=<%= @book.composition %>>
             </div>
         </div>
         <div class="control-group"> 
             <label class="control-label" for="composer">Edition</label>
             <div class="controls">
-                <input type="text" name="edition" value=<%= @book.edition %>
+                <input type="text" name="edition" value=<%= @book.edition %>>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="editor">Editor</label>
             <div class="controls">
-                <input type="text" name="editor" value=<%= @book.editor %>
+                <input type="text" name="editor" value=<%= @book.editor %>>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="price">Purchase price</label>
             <div class="controls">
-                <input type="text" name="price" value=<%= @book.purchase_price.to_s('F') %>
+                <input type="text" name="price" value=<%= @book.purchase_price.to_s('F') %>>
             </div>
         </div>
         <div class="control-group">
