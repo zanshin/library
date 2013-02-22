@@ -2,10 +2,10 @@
 <table class="table table-hover table-condensed" width="100%">
     <tr>
         <th>Format</th>
-        <th>Composer</th>
-        <th>Composition</th>
-        <th>Edition</th>
+        <th>Composer / Author</th>
+        <th>Composition / Title</th>
         <th>Editor</th>
+        <th>Publisher</th>
         <th>Price</th>
         <th>Date Added</th>
         <th>&nbsp;</th>
@@ -17,11 +17,11 @@
         <td><%= book.type %></td>
         <td><%= book.composer %></td>
         <td><%= book.composition %></td>
-        <td><%= book.edition %></td>
         <td><%= book.editor %></td>
+        <td><%= book.edition %></td>
         <td><%= book.purchase_price.to_s('F') %></td>
         <td><small><%= book.created_at %></small></td>
-        <td><small><span><a class="btn btn-mini" href="/<%= book.id %>">edit</a> </span></td> 
+        <td><small><a class="text-info" href="/<%= book.id %>">edit</a></small></td> 
     </tr>
 <% end %>
 </table>
