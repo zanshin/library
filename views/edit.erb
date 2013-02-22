@@ -5,11 +5,13 @@
             <label class="control-label" for="type">Format</label>
             <div class="controls">
                 <select name="type" value="<%= @book.type %>">
-                    <optgroup label="Book type">
-                        <option value="textbook">Textbook</option>
-                        <option value="collection">Collection</option>
-                        <option value="sheet">Sheet music</option>
-                        <option value="method">Method book</option>
+                    <optgroup label="Format">
+                        <option value="Textbook">Textbook</option>
+                        <option value="Collection">Collection</option>
+                        <option value="Sheet">Sheet music</option>
+                        <option value="Method book">Method book</option>
+                        <option value="Book">Book</option>
+                        <option value="CD">Audio CD</option>
                     </optgroup>
                 </select>
             </div>
