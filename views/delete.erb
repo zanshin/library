@@ -1,5 +1,5 @@
 <% if @book %>
-    <p>Are you sure you want to delete the following book: <em>"<%= @book.composition %>"</em>?</p>
+    <p>Are you sure you want to delete the following item: <em>"<%= @book.composition %>"</em>?</p>
     <form action="/<%= @book.id %>" method="post">
         <input type="hidden" name="_method" value="delete">
         <input class="btn btn-danger" type="submit" value="Yes, delete it">

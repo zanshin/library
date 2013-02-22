@@ -23,13 +23,13 @@
             </div>
         </div>
         <div class="control-group"> 
-            <label class="control-label" for="composer">Composition</label>
+            <label class="control-label" for="composition">Composition</label>
             <div class="controls">
                 <input type="text" name="composition" value="<%= @book.composition %>">
             </div>
         </div>
         <div class="control-group"> 
-            <label class="control-label" for="composer">Edition</label>
+            <label class="control-label" for="edition">Publisher</label>
             <div class="controls">
                 <input type="text" name="edition" value="<%= @book.edition %>">
             </div>
@@ -48,8 +48,8 @@
         </div>
         <div class="control-group">
             <div class="controls">
-                <button class="btn btn-warning" type="submit">Update book</button>
-                <a class="btn btn-danger" href="/<%= @book.id %>/delete">Delete book</a>
+                <button class="btn btn-warning" type="submit">Update</button>
+                <a class="btn btn-danger" href="/<%= @book.id %>/delete">Delete</a>
                 <a class="btn btn-info" href="/">Cancel</a>
             </div>
         </div>
