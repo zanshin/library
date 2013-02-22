@@ -19,7 +19,7 @@
         <td><%= book.composition %></td>
         <td><%= book.editor %></td>
         <td><%= book.edition %></td>
-        <td><%= book.purchase_price.to_s('F') %></td>
+        <td><%= "%.2f" % book.purchase_price %></td>
         <td><small><%= book.created_at %></small></td>
         <td><small><a class="text-info" href="/<%= book.id %>">edit</a></small></td> 
     </tr>
