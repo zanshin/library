@@ -4,14 +4,14 @@
         <div class="control-group">
             <label class="control-label" for="type">Format</label>
             <div class="controls">
-                <select name="type" value="<%= @book.type %>">
+                <select name="type">
                     <optgroup label="Format">
-                        <option value="Textbook">Textbook</option>
-                        <option value="Collection">Collection</option>
-                        <option value="Sheet">Sheet music</option>
-                        <option value="Method book">Method book</option>
-                        <option value="Book">Book</option>
-                        <option value="CD">Audio CD</option>
+                        <option value="Textbook" <%= "selected" if @book.type == "Textbook" %>>Textbook</option>
+                        <option value="Collection" <%= "selected" if @book.type == "Collection" %>>Collection</option>
+                        <option value="Sheet" <%= "selected" if @book.type == "Sheet" %>>Sheet music</option>
+                        <option value="Method book" <%= "selected" if @book.type == "Method book" %>>Method book</option>
+                        <option value="Book" <%= "selected" if @book.type == "Book" %>>Book</option>
+                        <option value="CD" <%= "selected" if @book.type == "CD" %>>Audio CD</option>
                     </optgroup>
                 </select>
             </div>
