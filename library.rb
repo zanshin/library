@@ -27,6 +27,9 @@ get '/' do
     @books = Book.all :order => :id.desc
     # puts "found #{@books.count} books"
     @subhead = 'All items'
+    @items = @books.count
+    @totalitems = @books.count
+    @valuation = @books.sum(:purchase_price)
     erb :home
 end
 
@@ -35,6 +38,9 @@ end
 get '/sort/composer' do 
     @books = Book.all :order => :composer.asc
     @subhead = 'All items'
+    @items = @books.count
+    @totalitems = @books.count
+    @valuation = @books.sum(:purchase_price)
     erb :home
 end
 
@@ -42,6 +48,9 @@ end
 get '/sort/composition' do 
     @books = Book.all :order => :composition.asc
     @subhead = 'All items'
+    @items = @books.count
+    @totalitems = @books.count
+    @valuation = @books.sum(:purchase_price)
     erb :home
 end
 
@@ -49,6 +58,9 @@ end
 get '/sort/publisher' do 
     @books = Book.all :order => :edition.asc
     @subhead = 'All items'
+    @items = @books.count
+    @totalitems = @books.count
+    @valuation = @books.sum(:purchase_price)
     erb :home
 end
 
@@ -56,6 +68,9 @@ end
 get '/sort/type' do 
     @books = Book.all :order => :type.asc
     @subhead = 'All items'
+    @items = @books.count
+    @totalitems = @books.count
+    @valuation = @books.sum(:purchase_price)
     erb :home
 end
 
@@ -65,7 +80,11 @@ get '/search' do
              Book.all(:composition.like => "%#{params[:query]}%") |
              Book.all(:edition.like => "%#{params[:query]}%") |
              Book.all(:type.like => "%#{params[:query]}%")
-    @subhead = 'Search results'
+    @subhead = "Search results for '#{params[:query]}'"
+    @items = @books.count
+    @allbooks = Book.all
+    @totalitems = @allbooks.count
+    @valuation = @books.sum(:purchase_price)
     erb :home
 end
 
