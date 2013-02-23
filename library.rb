@@ -59,6 +59,17 @@ get '/sort/type' do
     erb :home
 end
 
+# search action
+get '/search' do
+    @books = Book.all(:composer.like => "%#{params[:query]}%") | 
+             Book.all(:composition.like => "%#{params[:query]}%") |
+             Book.all(:edition.like => "%#{params[:query]}%") |
+             Book.all(:type.like => "%#{params[:query]}%")
+    @subhead = 'Search results'
+    erb :home
+end
+
+
 # show add pag
 get '/add' do
     # puts "adding new book"
