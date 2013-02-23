@@ -25,7 +25,7 @@ DataMapper.finalize.auto_upgrade!
 # index action
 get '/' do 
     @books = Book.all :order => :id.desc
-    puts "found #{@books.count} books"
+    # puts "found #{@books.count} books"
     @subhead = 'All items'
     erb :home
 end
@@ -34,7 +34,6 @@ end
 # composer sort action
 get '/sort/composer' do 
     @books = Book.all :order => :composer.asc
-    puts "found #{@books.count} books"
     @subhead = 'All items'
     erb :home
 end
@@ -42,7 +41,6 @@ end
 # composition sort action
 get '/sort/composition' do 
     @books = Book.all :order => :composition.asc
-    puts "found #{@books.count} books"
     @subhead = 'All items'
     erb :home
 end
@@ -50,7 +48,6 @@ end
 # edition (Publisher) sort action
 get '/sort/publisher' do 
     @books = Book.all :order => :edition.asc
-    puts "found #{@books.count} books"
     @subhead = 'All items'
     erb :home
 end
@@ -58,14 +55,13 @@ end
 # format sort action
 get '/sort/type' do 
     @books = Book.all :order => :type.asc
-    puts "found #{@books.count} books"
     @subhead = 'All items'
     erb :home
 end
 
 # show add pag
 get '/add' do
-    puts "adding new book"
+    # puts "adding new book"
     @subhead = "Add item"
     erb :add
 end
