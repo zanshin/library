@@ -30,6 +30,39 @@ get '/' do
     erb :home
 end
 
+# sort routes
+# composer sort action
+get '/sort/composer' do 
+    @books = Book.all :order => :composer.asc
+    puts "found #{@books.count} books"
+    @subhead = 'All items'
+    erb :home
+end
+
+# composition sort action
+get '/sort/composition' do 
+    @books = Book.all :order => :composition.asc
+    puts "found #{@books.count} books"
+    @subhead = 'All items'
+    erb :home
+end
+
+# edition (Publisher) sort action
+get '/sort/publisher' do 
+    @books = Book.all :order => :edition.asc
+    puts "found #{@books.count} books"
+    @subhead = 'All items'
+    erb :home
+end
+
+# format sort action
+get '/sort/type' do 
+    @books = Book.all :order => :type.asc
+    puts "found #{@books.count} books"
+    @subhead = 'All items'
+    erb :home
+end
+
 # show add pag
 get '/add' do
     puts "adding new book"
