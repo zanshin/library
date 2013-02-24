@@ -33,40 +33,9 @@ get '/' do
     erb :home
 end
 
-# sort routes
-# composer sort action
-get '/sort/composer' do 
-    @books = Book.all :order => :composer.asc
-    @subhead = 'All items'
-    @items = @books.count
-    @totalitems = @books.count
-    @valuation = @books.sum(:purchase_price)
-    erb :home
-end
-
-# composition sort action
-get '/sort/composition' do 
-    @books = Book.all :order => :composition.asc
-    @subhead = 'All items'
-    @items = @books.count
-    @totalitems = @books.count
-    @valuation = @books.sum(:purchase_price)
-    erb :home
-end
-
-# edition (Publisher) sort action
-get '/sort/publisher' do 
-    @books = Book.all :order => :edition.asc
-    @subhead = 'All items'
-    @items = @books.count
-    @totalitems = @books.count
-    @valuation = @books.sum(:purchase_price)
-    erb :home
-end
-
-# format sort action
-get '/sort/type' do 
-    @books = Book.all :order => :type.asc
+# sort action
+get '/sort/:sortorder' do |so|
+    @books = Book.all :order => so.to_sym.asc
     @subhead = 'All items'
     @items = @books.count
     @totalitems = @books.count
