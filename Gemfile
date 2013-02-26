@@ -7,6 +7,7 @@ gem 'thin'
 #gem 'json', '1.6.5'
 
 group :development do
+  gem 'shotgun'
   gem 'dm-sqlite-adapter', '1.2.0'
   gem 'sass'
   gem 'rubyzip'
