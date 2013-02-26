@@ -1,7 +1,7 @@
-# edit action
-get '/:id/edit' do 
-    puts "[INFO] reached /:id (edit)"
-    @book = Book.get params[:id]
+# edit action - use regex to capture only URLs with ids
+get %r{/(\d+)} do |id|
+    puts "[INFO] reached /:id (edit) for item " + id
+    @book = Book.get "#{id}"
     @subhead = "Edit item"
     erb :edit
 end

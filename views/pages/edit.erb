@@ -1,5 +1,5 @@
 <% if @book %>
-    <form action="/<%= @book.id %>/edit" method="post" id="edit">
+    <form action="/<%= @book.id %>" method="post" id="edit">
         <input type="hidden" name="_method" value="put">
         <div class="control-group">
             <label class="control-label" for="type">Format</label>

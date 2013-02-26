@@ -14,7 +14,7 @@
         <td><em><%= book.composition %></em> <br> <%= book.composer %></td>
         <td><%= book.edition %> <br> <%= book.editor %></td>
         <td><%= book.type %> <br> <%= "%.2f" % book.purchase_price %></td>
-        <td><small><%= book.created_at %></small> <br> <small><a class="text-info" href="/<%= book.id %>/edit">edit</a></small></td>
+        <td><small><%= book.created_at %></small> <br> <small><a class="text-info" href="/<%= book.id %>">edit</a></small></td>
     </tr>
 
     <% end %>
