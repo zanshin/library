@@ -1,5 +1,6 @@
 # edit action
-get '/:id' do 
+get '/:id/edit' do 
+    puts "[INFO] reached /:id (edit)"
     @book = Book.get params[:id]
     @subhead = "Edit item"
     erb :edit

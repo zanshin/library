@@ -1,6 +1,6 @@
 get '/' do 
     @books = Book.all :order => :id.desc
-    # puts "found #{@books.count} books"
+    puts "[INFO] at / found #{@books.count} books"
     @subhead = 'All items'
     @items = @books.count
     @totalitems = @books.count
