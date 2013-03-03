@@ -3,7 +3,7 @@ get '/search' do
     @books = Book.all(:composer.like => "%#{params[:query]}%") | 
              Book.all(:composition.like => "%#{params[:query]}%") |
              Book.all(:edition.like => "%#{params[:query]}%") |
-             Book.all(:type.like => "%#{params[:query]}%")
+             Book.all(:editor.like => "%#{params[:query]}%")
     puts "[INFO} found #{@books.count} books"
     @subhead = "Search results for '#{params[:query]}'"
     @items = @books.count
