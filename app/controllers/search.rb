@@ -9,6 +9,12 @@ get '/search' do
     @items = @books.count
     @allbooks = Book.all
     @totalitems = @allbooks.count
-    @valuation = @books.sum(:purchase_price)
+    
+    if @items == 0
+        @valuation = 0
+    else 
+        @valuation = @books.sum(:purchase_price)
+    end
+
     erb :home
 end
