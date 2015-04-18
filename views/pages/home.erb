@@ -22,4 +22,6 @@
     </tbody>
 </table>
 
+<% if @valuation != nil %>
 <p class="text-center">Currently displaying <%= @items %> of <%= @totalitems %> items. Valued at $<%= "%.2f" % @valuation %>.</p>
+<% end %>
