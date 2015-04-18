@@ -4,7 +4,8 @@ require 'data_mapper'
 
 # database setup
 # DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/library.db")
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/library.db")
+# DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/library.db")
+DataMapper.setup(:default, "sqlite3://#{File.dirname(File.expand_path(__FILE__))}/library.db")
 
 configure do
   set :views, ['views/layouts', 'views/pages', 'views/partials']
