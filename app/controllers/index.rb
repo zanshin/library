@@ -5,5 +5,6 @@ get '/' do
     @items = @books.count
     @totalitems = @books.count
     @valuation = @books.sum(:purchase_price)
+    puts "[INFO] at / valuation is #{@valuation}"
     erb :home
 end
