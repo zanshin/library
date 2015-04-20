@@ -6,7 +6,7 @@ get '/add' do
 end
 
 #post action (add)
-post '/' do 
+post '/' do
     b = Book.new
     b.type = params[:type]
     b.composer = params[:composer]
@@ -16,7 +16,7 @@ post '/' do
     b.purchase_price = params[:price]
     b.created_at = Time.now.to_date.to_s
     b.updated_at = Time.now.to_date.to_s
-    
+
     if b.save
         puts "[INFO] The item was saved"
     else
